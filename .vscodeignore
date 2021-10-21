@@ -1,3 +1,4 @@
+# vscode
 .vscode/**
 .vscode-test/**
 src/**
@@ -8,3 +9,8 @@ vsc-extension-quickstart.md
 **/.eslintrc.json
 **/*.map
 **/*.ts
+
+# packages
+**/node_modules/**
+packages/**
+!packages/workbench/dist/**

@@ -1,0 +1,1 @@
+export const EXTENSION_SETTING_START_UP = 'kodoWorkbench.showStartUp';
