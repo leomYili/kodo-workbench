@@ -62,6 +62,7 @@ export function invokeCallback(
 
 /**
  * 存放所有消息回调函数，根据 message.cmd 来决定调用哪个方法
+ * 简单封装
  */
 export const messageHandler: any = {
   getConfig(global: any, message: any) {

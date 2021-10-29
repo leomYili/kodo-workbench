@@ -1,9 +1,9 @@
 import * as vscode from "vscode";
+import { EXTENSION_SETTING_START_UP } from "@/constants";
+import { getWebViewContent, messageHandler } from "@/utils/webview";
+import { showError } from "@/utils/path";
 
-import { EXTENSION_SETTING_START_UP } from "../constants";
-import { getWebViewContent, messageHandler } from "../utils/webview";
-import { showError } from "../utils/path";
-import { getUmiContent } from "./getUmiContent";
+import { getUmiContent } from "./utils/getUmiContent";
 
 const welcome = (context: vscode.ExtensionContext) => {
   let currentPanel: vscode.WebviewPanel | undefined = undefined;
@@ -49,6 +49,10 @@ const welcome = (context: vscode.ExtensionContext) => {
           currentPanel,
           `3.5.20`
         );
+
+        currentPanel.onDidChangeViewState((e) => {
+          console.log(e.webviewPanel);
+        });
 
         currentPanel.webview.onDidReceiveMessage(
           (message) => {

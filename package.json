@@ -1,11 +1,16 @@
 {
   "name": "kodo-workbench",
   "displayName": "Kodo Workbench",
+  "publisher": "suda",
   "description": "A custom code management publishing workbench for engineers in in-house R&D teams, integrated with jira and gitlab to create highly productive tools!",
   "version": "0.0.1",
   "engines": {
     "vscode": "^1.61.0"
   },
+  "private":"true",
+  "workspaces": [
+    "packages/*"
+  ],
   "categories": [
     "Other"
   ],
@@ -33,12 +38,13 @@
     ]
   },
   "scripts": {
-    "vscode:prepublish": "yarn run compile",
-    "compile": "tsc -p ./",
-    "watch": "tsc -watch -p ./",
-    "pretest": "yarn run compile && yarn run lint",
+    "vscode:prepublish": "npm run esbuild-base --minify",
+    "esbuild-base": "esbuild ./src/extension.ts --bundle --outfile=out/extension.js --external:vscode --format=cjs --platform=node",
+    "esbuild": "npm run esbuild-base --sourcemap",
+    "esbuild-watch": "npm run esbuild-base --sourcemap --watch",
+    "test-compile": "tsc -p ./",
+    "pretest": "yarn test-compile && yarn lint",
     "lint": "eslint src --ext ts",
-    "test": "node ./out/test/runTest.js",
     "start:web": "cross-env APP_ROOT=packages/workbench umi dev",
     "build:web": "cross-env APP_ROOT=packages/workbench umi build"
   },
@@ -51,6 +57,7 @@
     "@typescript-eslint/parser": "^4.31.1",
     "@vscode/test-electron": "^1.6.2",
     "cross-env": "^7.0.3",
+    "esbuild": "^0.13.9",
     "eslint": "^7.32.0",
     "glob": "^7.1.7",
     "mocha": "^9.1.1",

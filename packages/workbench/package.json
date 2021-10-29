@@ -1,5 +1,7 @@
 {
-  "private": true,
+  "name": "workbench",
+  "version": "0.0.1",
+  "private": "true",
   "scripts": {
     "start": "umi dev",
     "build": "umi build",
@@ -20,15 +22,18 @@
     ]
   },
   "dependencies": {
-    "@ant-design/pro-layout": "^6.5.0",
     "react": "17.x",
     "react-dom": "17.x",
     "umi": "^3.5.20"
   },
   "devDependencies": {
+    "@blacklake-kodo/plugin-rematch": "^0.2.3",
     "@types/react": "^17.0.0",
     "@types/react-dom": "^17.0.0",
-    "@umijs/preset-react": "1.x",
+    "@umijs/plugin-antd": "^0.11.0",
+    "@umijs/plugin-initial-state": "^2.4.0",
+    "@umijs/plugin-model": "^2.6.1",
+    "@umijs/plugin-sass": "^1.1.1",
     "@umijs/test": "^3.5.20",
     "lint-staged": "^10.0.7",
     "prettier": "^2.2.0",

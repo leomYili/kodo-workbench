@@ -8,5 +8,5 @@ export default defineConfig({
     type: 'memory',
   },
   publicPath: process.env.NODE_ENV === 'production' ? './' : '/',
-  routes: [{ path: '/', component: '@/pages/index' }],
+  sass: {},
 });
