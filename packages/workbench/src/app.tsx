@@ -1,24 +1,14 @@
-import { Application, ApplicationLanguages } from '@/interface';
+import { Application } from '@/interface';
+import { importAll } from '@/utils/importAll';
 
 /**
  * 动态加载所有应用模块,并进行分析,收集入口以及应用各项信息
  * @returns
  */
 export async function getInitialState() {
-  const data = await new Promise((resolve, reject) => {
-    setTimeout(() => {
-      resolve([
-        {
-          id: '',
-          title: '',
-          description: '',
-          upTime: '',
-          developer: '',
-          languages: [ApplicationLanguages.chinese],
-        },
-      ]);
-    });
-  });
+  const tools = await importAll();
+  
+  console.log(tools);
 
-  return data;
+  return { tools: tools };
 }

@@ -45,6 +45,7 @@
     "test-compile": "tsc -p ./",
     "pretest": "yarn test-compile && yarn lint",
     "lint": "eslint src --ext ts",
+    "start:web-analyze": "cross-env APP_ROOT=packages/workbench ANALYZE=1 umi dev",
     "start:web": "cross-env APP_ROOT=packages/workbench umi dev",
     "build:web": "cross-env APP_ROOT=packages/workbench umi build"
   },

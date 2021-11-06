@@ -22,19 +22,26 @@
     ]
   },
   "dependencies": {
+    "connected-react-router": "^6.9.1",
+    "invariant": "^2.2.4",
     "react": "17.x",
     "react-dom": "17.x",
     "umi": "^3.5.20"
   },
   "devDependencies": {
+    "@blacklake-kodo/plugin-lodash": "^0.2.1",
     "@blacklake-kodo/plugin-rematch": "^0.2.3",
+    "@types/invariant": "^2.2.35",
+    "@types/lodash": "^4.14.176",
     "@types/react": "^17.0.0",
     "@types/react-dom": "^17.0.0",
+    "@types/webpack-env": "^1.16.3",
     "@umijs/plugin-antd": "^0.11.0",
     "@umijs/plugin-initial-state": "^2.4.0",
     "@umijs/plugin-model": "^2.6.1",
     "@umijs/plugin-sass": "^1.1.1",
     "@umijs/test": "^3.5.20",
+    "babel-plugin-lodash": "^3.3.4",
     "lint-staged": "^10.0.7",
     "prettier": "^2.2.0",
     "typescript": "^4.1.2",
